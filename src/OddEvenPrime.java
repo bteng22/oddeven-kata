@@ -1,13 +1,25 @@
-import java.io.PrintStream;
-
 public class OddEvenPrime {
-    private final PrintStream printStream;
 
-    public OddEvenPrime(PrintStream printStream) {
-        this.printStream = printStream;
+    public String evaluate(int number) {
+
+        if (isEven(number)) return "Even";
+
+        if (isOdd(number)) return "Odd";
+
+        return String.valueOf(number);
     }
 
-    public void evaluate() {
-        printStream.println(1);
+    private boolean isOdd(int number) {
+        if (number % 2 == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        }
+        return false;
     }
 }
